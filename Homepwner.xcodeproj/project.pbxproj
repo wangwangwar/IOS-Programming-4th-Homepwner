@@ -15,6 +15,7 @@
 		6135469F19FC9C1F00583593 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6135469D19FC9C1F00583593 /* LaunchScreen.xib */; };
 		613546AB19FC9C1F00583593 /* HomepwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 613546AA19FC9C1F00583593 /* HomepwnerTests.m */; };
 		61A3C7A619FE21AD00D61DC1 /* BNRItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3C7A519FE21AD00D61DC1 /* BNRItemViewController.m */; };
+		61A3C7A919FE24F200D61DC1 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3C7A819FE24F200D61DC1 /* BNRItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		613546AA19FC9C1F00583593 /* HomepwnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerTests.m; sourceTree = "<group>"; };
 		61A3C7A419FE21AD00D61DC1 /* BNRItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemViewController.h; sourceTree = "<group>"; };
 		61A3C7A519FE21AD00D61DC1 /* BNRItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemViewController.m; sourceTree = "<group>"; };
+		61A3C7A719FE24F200D61DC1 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		61A3C7A819FE24F200D61DC1 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 			children = (
 				6135469219FC9C1F00583593 /* AppDelegate.h */,
 				6135469319FC9C1F00583593 /* AppDelegate.m */,
+				61A3C7A719FE24F200D61DC1 /* BNRItem.h */,
+				61A3C7A819FE24F200D61DC1 /* BNRItem.m */,
 				6135469519FC9C1F00583593 /* ViewController.h */,
 				6135469619FC9C1F00583593 /* ViewController.m */,
 				61A3C7A419FE21AD00D61DC1 /* BNRItemViewController.h */,
@@ -226,6 +231,7 @@
 			files = (
 				6135469719FC9C1F00583593 /* ViewController.m in Sources */,
 				6135469419FC9C1F00583593 /* AppDelegate.m in Sources */,
+				61A3C7A919FE24F200D61DC1 /* BNRItem.m in Sources */,
 				61A3C7A619FE21AD00D61DC1 /* BNRItemViewController.m in Sources */,
 				6135469119FC9C1F00583593 /* main.m in Sources */,
 			);
