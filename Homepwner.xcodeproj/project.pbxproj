@@ -16,6 +16,7 @@
 		613546AB19FC9C1F00583593 /* HomepwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 613546AA19FC9C1F00583593 /* HomepwnerTests.m */; };
 		61A3C7A619FE21AD00D61DC1 /* BNRItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3C7A519FE21AD00D61DC1 /* BNRItemViewController.m */; };
 		61A3C7A919FE24F200D61DC1 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3C7A819FE24F200D61DC1 /* BNRItem.m */; };
+		61A3C7AC19FE421900D61DC1 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3C7AB19FE421900D61DC1 /* BNRItemStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		61A3C7A519FE21AD00D61DC1 /* BNRItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemViewController.m; sourceTree = "<group>"; };
 		61A3C7A719FE24F200D61DC1 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		61A3C7A819FE24F200D61DC1 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
+		61A3C7AA19FE421900D61DC1 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
+		61A3C7AB19FE421900D61DC1 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				6135469319FC9C1F00583593 /* AppDelegate.m */,
 				61A3C7A719FE24F200D61DC1 /* BNRItem.h */,
 				61A3C7A819FE24F200D61DC1 /* BNRItem.m */,
+				61A3C7AA19FE421900D61DC1 /* BNRItemStore.h */,
+				61A3C7AB19FE421900D61DC1 /* BNRItemStore.m */,
 				6135469519FC9C1F00583593 /* ViewController.h */,
 				6135469619FC9C1F00583593 /* ViewController.m */,
 				61A3C7A419FE21AD00D61DC1 /* BNRItemViewController.h */,
@@ -234,6 +239,7 @@
 				61A3C7A919FE24F200D61DC1 /* BNRItem.m in Sources */,
 				61A3C7A619FE21AD00D61DC1 /* BNRItemViewController.m in Sources */,
 				6135469119FC9C1F00583593 /* main.m in Sources */,
+				61A3C7AC19FE421900D61DC1 /* BNRItemStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
