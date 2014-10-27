@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BNRItemViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    BNRItemViewController *itemViewController = [BNRItemViewController new];
+    self.window.rootViewController = itemViewController;
+    
     return YES;
 }
 
