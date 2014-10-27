@@ -20,8 +20,8 @@
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
                     serialNumber:(NSString *)serialNumber;
-
 - (instancetype)initWithItemName:(NSString *)name;
++ (instancetype)randomItem;
 
 - (void)setItemName:(NSString *)str;
 - (NSString *)itemName;

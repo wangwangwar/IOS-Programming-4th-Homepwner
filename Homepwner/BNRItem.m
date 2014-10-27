@@ -70,4 +70,27 @@
     return self;
 }
 
++ (instancetype)randomItem {
+    NSArray *randomAdjectiveList = @[@"Fluffy", @"Rusty", @"Shiny"];
+    NSArray *randomNounList = @[@"Bear", @"Spork", @"Mac"];
+    
+    NSInteger adjectiveIndex = arc4random() % [randomAdjectiveList count];
+    NSInteger nounIndex = arc4random() % [randomNounList count];
+    
+    NSString *randomName = [[NSString alloc] initWithFormat:@"%@ %@", [randomAdjectiveList objectAtIndex:adjectiveIndex], [randomNounList objectAtIndex:nounIndex]];
+    
+    int randomValue = arc4random() % 100;
+    
+    NSString *randomSerialNumber = [[NSString alloc] initWithFormat:@"%c%c%c%c%c",
+                                    'A' + arc4random() % 26,
+                                    '0' + arc4random() % 10,
+                                    'A' + arc4random() % 26,
+                                    '0' + arc4random() % 10,
+                                    'A' + arc4random() % 26];
+    
+    BNRItem *item = [[BNRItem alloc] initWithItemName:randomName valueInDollars:randomValue serialNumber:randomSerialNumber];
+    
+    return item;
+}
+
 @end
