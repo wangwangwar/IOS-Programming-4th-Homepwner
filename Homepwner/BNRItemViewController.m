@@ -38,14 +38,27 @@
         NSArray *items = [[BNRItemStore sharedStore] allItems];
         BNRItem *item = items[indexPath.row];
         cell.textLabel.text = [item description];
+        cell.textLabel.font = [UIFont systemFontOfSize:20.0];
     }
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == [[[BNRItemStore sharedStore] allItems] count]) {
+        return 44.0;
+    } else {
+        return 66.0;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    UIImageView *bgView = [UIImageView new];
+    UIImage *bgImg = [UIImage imageNamed:@"blue.png"];
+    bgView.image = bgImg;
+    self.tableView.backgroundView = bgView;
 }
 
 @end
