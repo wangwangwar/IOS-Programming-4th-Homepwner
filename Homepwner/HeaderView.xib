@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJ6-eQ-RTD">
-                    <rect key="frame" x="225" y="20" width="31" height="30"/>
+                    <rect key="frame" x="215" y="20" width="40" height="30"/>
                     <state key="normal" title="New">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -20,13 +20,16 @@
                     </variation>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIT-aV-HQZ">
-                    <rect key="frame" x="65" y="20" width="30" height="30"/>
+                    <rect key="frame" x="65" y="20" width="40" height="30"/>
                     <state key="normal" title="Edit">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=compact" fixedFrame="YES">
                         <rect key="frame" x="56" y="0.0" width="46" height="30"/>
                     </variation>
+                    <connections>
+                        <action selector="toggleEditingMode:" destination="-1" eventType="touchUpInside" id="d8A-rz-5aW"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
