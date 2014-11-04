@@ -18,6 +18,9 @@
                     <variation key="heightClass=compact" fixedFrame="YES">
                         <rect key="frame" x="175" y="0.0" width="46" height="30"/>
                     </variation>
+                    <connections>
+                        <action selector="addNewItem:" destination="-1" eventType="touchUpInside" id="s6u-Yt-40e"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIT-aV-HQZ">
                     <rect key="frame" x="65" y="20" width="40" height="30"/>
