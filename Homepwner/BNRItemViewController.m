@@ -51,6 +51,10 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
 - (UIView *)headerView {
     if (!_headerView) {
         _headerView = [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
