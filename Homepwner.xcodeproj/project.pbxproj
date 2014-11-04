@@ -17,6 +17,7 @@
 		61A3C7A619FE21AD00D61DC1 /* BNRItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3C7A519FE21AD00D61DC1 /* BNRItemViewController.m */; };
 		61A3C7A919FE24F200D61DC1 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3C7A819FE24F200D61DC1 /* BNRItem.m */; };
 		61A3C7AC19FE421900D61DC1 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3C7AB19FE421900D61DC1 /* BNRItemStore.m */; };
+		61A3C7B01A074FB300D61DC1 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61A3C7AF1A074FB300D61DC1 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		61A3C7A819FE24F200D61DC1 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		61A3C7AA19FE421900D61DC1 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		61A3C7AB19FE421900D61DC1 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		61A3C7AF1A074FB300D61DC1 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				6135469619FC9C1F00583593 /* ViewController.m */,
 				61A3C7A419FE21AD00D61DC1 /* BNRItemViewController.h */,
 				61A3C7A519FE21AD00D61DC1 /* BNRItemViewController.m */,
+				61A3C7AF1A074FB300D61DC1 /* HeaderView.xib */,
 				6135469819FC9C1F00583593 /* Main.storyboard */,
 				6135469B19FC9C1F00583593 /* Images.xcassets */,
 				6135469D19FC9C1F00583593 /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 				6135469A19FC9C1F00583593 /* Main.storyboard in Resources */,
 				6135469F19FC9C1F00583593 /* LaunchScreen.xib in Resources */,
 				6135469C19FC9C1F00583593 /* Images.xcassets in Resources */,
+				61A3C7B01A074FB300D61DC1 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
