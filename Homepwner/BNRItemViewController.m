@@ -73,6 +73,14 @@
     return true;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
+    if (proposedDestinationIndexPath.row == [[[BNRItemStore sharedStore] allItems] count]) {
+        return sourceIndexPath;
+    } else {
+        return proposedDestinationIndexPath;
+    }
+}
+
 - (UIView *)headerView {
     if (!_headerView) {
         _headerView = [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
