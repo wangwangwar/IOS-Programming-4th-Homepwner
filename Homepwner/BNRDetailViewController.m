@@ -20,6 +20,13 @@
 
 @implementation BNRDetailViewController
 
+#pragma mark - Basic
+
+- (void)setItem:(BNRItem *)item {
+    _item = item;
+    self.navigationItem.title = item.itemName;
+}
+
 #pragma mark - View
 
 - (void)viewWillAppear:(BOOL)animated {
