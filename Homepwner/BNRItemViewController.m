@@ -13,22 +13,9 @@
 
 @interface BNRItemViewController()
 
-@property (nonatomic, strong) IBOutlet UIView *headerView;
-
 @end
 
 @implementation BNRItemViewController
-
-#pragma mark - Basic
-
-- (UIView *)headerView {
-    if (!_headerView) {
-        _headerView = [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                      owner:self
-                                                 options:nil][0];
-    }
-    return _headerView;
-}
 
 #pragma mark - Initialization
 
@@ -37,6 +24,14 @@
     if (self) {
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"Homepwner";
+        
+        // Create a new bar button item that will send
+        // addNewItem: to BNRItemViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
+        navItem.rightBarButtonItem = bbi;
+        
+        // Left button item to edit
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     return self;
 }
@@ -50,8 +45,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    
-    [self.tableView setTableHeaderView:self.headerView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -109,13 +102,4 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
-- (IBAction)toggleEditingMode:(id)sender {
-    if (self.isEditing) {
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        [self setEditing:NO animated:YES];
-    } else {
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        [self setEditing:YES animated:YES];
-    }
-}
 @end
