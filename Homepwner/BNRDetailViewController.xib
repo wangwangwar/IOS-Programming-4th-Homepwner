@@ -6,8 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
-                <outlet property="DateLabel" destination="UFu-e5-1gk" id="FH9-cL-ATZ"/>
                 <outlet property="SerialNumberField" destination="dlu-5Q-U3g" id="KJo-bt-Vrl"/>
+                <outlet property="dateLabel" destination="UFu-e5-1gk" id="Gok-Hj-p7u"/>
                 <outlet property="nameField" destination="PzB-3W-021" id="Z8d-hn-mbM"/>
                 <outlet property="valueField" destination="Uk9-h2-uOC" id="6Ue-jF-2u0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
