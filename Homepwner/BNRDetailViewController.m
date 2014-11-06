@@ -20,6 +20,8 @@
 
 @implementation BNRDetailViewController
 
+#pragma mark - View
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     

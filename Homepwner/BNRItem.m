@@ -10,6 +10,8 @@
 
 @implementation BNRItem
 
+#pragma mark - Basic Operation
+
 - (void)setItemName:(NSString *)str {
     _itemName = str;
 }
@@ -37,15 +39,7 @@
     return _dateCreated;
 }
 
-- (NSString *)description {
-    NSString *descriptionString =
-    [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
-     self.itemName,
-     self.serialName,
-     self.valueInDollars,
-     self.dateCreated];
-    return descriptionString;
-}
+#pragma mark - Initialization
 
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
@@ -69,6 +63,19 @@
     
     return self;
 }
+
+#pragma mark - Other
+- (NSString *)description {
+    NSString *descriptionString =
+    [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
+     self.itemName,
+     self.serialName,
+     self.valueInDollars,
+     self.dateCreated];
+    return descriptionString;
+}
+
+#pragma mark - Class Method
 
 + (instancetype)randomItem {
     NSArray *randomAdjectiveList = @[@"Fluffy", @"Rusty", @"Shiny"];

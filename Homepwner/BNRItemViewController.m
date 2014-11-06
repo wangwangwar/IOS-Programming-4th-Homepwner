@@ -19,6 +19,19 @@
 
 @implementation BNRItemViewController
 
+#pragma mark - Basic
+
+- (UIView *)headerView {
+    if (!_headerView) {
+        _headerView = [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
+                                      owner:self
+                                                 options:nil][0];
+    }
+    return _headerView;
+}
+
+#pragma mark - Initialization
+
 - (instancetype)init {
     self = [super initWithStyle:UITableViewStylePlain];
     return self;
@@ -27,6 +40,23 @@
 - (instancetype)initWithStyle:(UITableViewStyle)style {
     return [self init];
 }
+
+#pragma mark - View
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
+    [self.tableView setTableHeaderView:self.headerView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
+#pragma mark - Table
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[[BNRItemStore sharedStore] allItems] count];
@@ -56,21 +86,17 @@
     [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
-- (UIView *)headerView {
-    if (!_headerView) {
-        _headerView = [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                      owner:self
-                                                 options:nil][0];
-    }
-    return _headerView;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BNRDetailViewController *detailViewController = [BNRDetailViewController new];
+    
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *item = items[indexPath.row];
+    detailViewController.item = item;
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    
-    [self.tableView setTableHeaderView:self.headerView];
-}
+#pragma mark - Action
 
 - (IBAction)addNewItem:(id)sender {
     BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
@@ -87,21 +113,5 @@
         [sender setTitle:@"Done" forState:UIControlStateNormal];
         [self setEditing:YES animated:YES];
     }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BNRDetailViewController *detailViewController = [BNRDetailViewController new];
-    
-    NSArray *items = [[BNRItemStore sharedStore] allItems];
-    BNRItem *item = items[indexPath.row];
-    detailViewController.item = item;
-    
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self.tableView reloadData];
 }
 @end

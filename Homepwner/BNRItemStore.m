@@ -17,15 +17,7 @@
 
 @implementation BNRItemStore
 
-+ (instancetype)sharedStore {
-    static BNRItemStore *sharedStore = nil;
-    
-    if (!sharedStore) {
-        sharedStore = [[self alloc] initPrivate];
-    }
-    
-    return sharedStore;
-}
+#pragma mark - Initialization
 
 - (instancetype)init {
     @throw [NSException exceptionWithName:@"Singleton" reason:@"Use +BNRItemStore sharedStore]" userInfo:nil];
@@ -39,6 +31,8 @@
     }
     return self;
 }
+
+#pragma mark - Operation
 
 - (NSArray *)allItems {
     return _privateItems;
@@ -63,6 +57,18 @@
     BNRItem *item = self.privateItems[fromIndex];
     [self.privateItems removeObjectAtIndex:fromIndex];
     [self.privateItems insertObject:item atIndex:toIndex];
+}
+
+#pragma mark - Class Method
+
++ (instancetype)sharedStore {
+    static BNRItemStore *sharedStore = nil;
+    
+    if (!sharedStore) {
+        sharedStore = [[self alloc] initPrivate];
+    }
+    
+    return sharedStore;
 }
 
 @end
