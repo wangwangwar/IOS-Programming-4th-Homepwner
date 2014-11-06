@@ -9,6 +9,7 @@
 #import "BNRItemViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
+#import "BNRDetailViewController.h"
 
 @interface BNRItemViewController()
 
@@ -88,4 +89,8 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BNRDetailViewController *detailViewController = [BNRDetailViewController new];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 @end
