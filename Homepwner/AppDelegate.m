@@ -19,7 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     BNRItemViewController *itemViewController = [BNRItemViewController new];
-    self.window.rootViewController = itemViewController;
+    
+    // Create an instance of a UINavigationController
+    // its stack contains only itemViewController
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemViewController];
+    self.window.rootViewController = navController;
     
     return YES;
 }
