@@ -38,7 +38,7 @@
     
     // make NSDateFormatter `static` for time-saving
     static NSDateFormatter *dateFormatter = nil;
-    if (dateFormatter) {
+    if (!dateFormatter) {
         dateFormatter = [NSDateFormatter new];
         dateFormatter.dateStyle = NSDateFormatterMediumStyle;
         dateFormatter.timeStyle = NSDateFormatterNoStyle;
