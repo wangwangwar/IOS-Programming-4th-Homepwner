@@ -8,6 +8,7 @@
 
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
+#import "BNRDatePickerViewController.h"
 
 @interface BNRDetailViewController ()
 
@@ -75,6 +76,13 @@
 - (void)tapDetected:(id)sender {
     NSLog(@"Tapped");
     [self.valueField resignFirstResponder];
+}
+
+- (IBAction)changeDate:(id)sender {
+    BNRDatePickerViewController *datePickerViewController = [BNRDatePickerViewController new];
+    datePickerViewController.item = self.item;
+    
+    [self.navigationController pushViewController:datePickerViewController animated:YES];
 }
 
 @end
