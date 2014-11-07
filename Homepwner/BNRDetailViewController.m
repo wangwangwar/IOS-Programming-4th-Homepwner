@@ -29,6 +29,17 @@
 
 #pragma mark - View
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // When tap on other place except text field, keyboard will dismiss
+    // automatically
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(tapDetected:)];
+    [self.view addGestureRecognizer:tap];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -57,6 +68,13 @@
     self.item.itemName = self.nameField.text;
     self.item.serialName = self.SerialNumberField.text;
     self.item.valueInDollars = [self.valueField.text intValue];
+}
+
+# pragma mark - Action
+
+- (void)tapDetected:(id)sender {
+    NSLog(@"Tapped");
+    [self.valueField resignFirstResponder];
 }
 
 @end
