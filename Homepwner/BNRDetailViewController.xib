@@ -8,7 +8,9 @@
             <connections>
                 <outlet property="SerialNumberField" destination="dlu-5Q-U3g" id="KJo-bt-Vrl"/>
                 <outlet property="dateLabel" destination="UFu-e5-1gk" id="Gok-Hj-p7u"/>
+                <outlet property="imageView" destination="o1y-lT-YE5" id="BqZ-st-LN9"/>
                 <outlet property="nameField" destination="PzB-3W-021" id="Z8d-hn-mbM"/>
+                <outlet property="toolbar" destination="s1g-UG-tmo" id="c8t-YA-gl3"/>
                 <outlet property="valueField" destination="Uk9-h2-uOC" id="6Ue-jF-2u0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -87,6 +89,25 @@
                         <outlet property="delegate" destination="-1" id="GvZ-xL-nRi"/>
                     </connections>
                 </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o1y-lT-YE5">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="30" y="252" width="260" height="260"/>
+                    </variation>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1g-UG-tmo">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="KlQ-kt-nNL">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="76J-ly-DP6"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    </variation>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -100,6 +121,8 @@
                     <exclude reference="Uk9-h2-uOC"/>
                     <exclude reference="UFu-e5-1gk"/>
                     <exclude reference="PzB-3W-021"/>
+                    <exclude reference="o1y-lT-YE5"/>
+                    <exclude reference="s1g-UG-tmo"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -111,6 +134,8 @@
                     <include reference="Uk9-h2-uOC"/>
                     <include reference="UFu-e5-1gk"/>
                     <include reference="PzB-3W-021"/>
+                    <include reference="o1y-lT-YE5"/>
+                    <include reference="s1g-UG-tmo"/>
                 </mask>
             </variation>
         </view>
