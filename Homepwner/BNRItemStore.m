@@ -32,7 +32,7 @@
     return self;
 }
 
-#pragma mark - Operation
+#pragma mark - Operations
 
 - (NSArray *)allItems {
     return _privateItems;

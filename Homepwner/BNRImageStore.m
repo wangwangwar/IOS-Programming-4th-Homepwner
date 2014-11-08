@@ -41,6 +41,8 @@
     return self;
 }
 
+#pragma mark - Operations
+
 - (void)setImage:(UIImage *)image forKey:(NSString *)key {
     [self.dictionary setObject:image forKey:key];
 }

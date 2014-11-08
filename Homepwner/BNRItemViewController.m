@@ -53,7 +53,7 @@
     [self.tableView reloadData];
 }
 
-#pragma mark - Table
+#pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[[BNRItemStore sharedStore] allItems] count];
@@ -83,6 +83,8 @@
     [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
+#pragma mark - Table view delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BNRDetailViewController *detailViewController = [BNRDetailViewController new];
     
@@ -93,7 +95,7 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-#pragma mark - Action
+#pragma mark - Actions
 
 - (IBAction)addNewItem:(id)sender {
     BNRItem *newItem = [[BNRItemStore sharedStore] createItem];

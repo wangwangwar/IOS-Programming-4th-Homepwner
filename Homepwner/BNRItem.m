@@ -75,7 +75,7 @@
     return descriptionString;
 }
 
-#pragma mark - Class Method
+#pragma mark - Class Methods
 
 + (instancetype)randomItem {
     NSArray *randomAdjectiveList = @[@"Fluffy", @"Rusty", @"Shiny"];
