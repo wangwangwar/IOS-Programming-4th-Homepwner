@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *serialName;
 @property (nonatomic) int valueInDollars;
 @property (nonatomic, readonly, strong) NSDate *dateCreated;
+@property (nonatomic, copy) NSString *itemKey;
 
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value

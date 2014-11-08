@@ -21,6 +21,10 @@
         _serialName = serialNumber;
         _valueInDollars = value;
         _dateCreated = [NSDate new];
+        
+        // Create an NSUUID object and get its string representation
+        NSUUID *uuid = [NSUUID new];
+        _itemKey = [uuid UUIDString];
     }
     
     return self;
