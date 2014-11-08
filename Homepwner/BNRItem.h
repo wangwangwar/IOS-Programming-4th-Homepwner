@@ -10,28 +10,15 @@
 
 @interface BNRItem : NSObject
 
-{
-    NSString *_itemName;
-    NSString *_serialName;
-    int _valueInDollars;
-    NSDate *_dateCreated;
-}
+@property (nonatomic, copy) NSString *itemName;
+@property (nonatomic, copy) NSString *serialName;
+@property (nonatomic) int valueInDollars;
+@property (nonatomic, readonly, strong) NSDate *dateCreated;
 
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
                     serialNumber:(NSString *)serialNumber;
 - (instancetype)initWithItemName:(NSString *)name;
 + (instancetype)randomItem;
-
-- (void)setItemName:(NSString *)str;
-- (NSString *)itemName;
-
-- (void)setSerialName:(NSString *)str;
-- (NSString *)serialName;
-
-- (void)setValueInDollars:(int)v;
-- (int)valueInDollars;
-
-- (NSDate *)dateCreated;
 
 @end

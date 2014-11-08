@@ -10,35 +10,6 @@
 
 @implementation BNRItem
 
-#pragma mark - Basic Operation
-
-- (void)setItemName:(NSString *)str {
-    _itemName = str;
-}
-
-- (NSString *)itemName {
-    return _itemName;
-}
-
-- (void)setSerialName:(NSString *)str {
-    _serialName = str;
-}
-
-- (NSString *)serialName {
-    return _serialName;
-}
-
-- (void)setValueInDollars:(int)v {
-    _valueInDollars = v;
-}
-- (int)valueInDollars {
-    return _valueInDollars;
-}
-
-- (NSDate *)dateCreated {
-    return _dateCreated;
-}
-
 #pragma mark - Initialization
 
 - (instancetype)initWithItemName:(NSString *)name
