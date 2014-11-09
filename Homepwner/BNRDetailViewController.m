@@ -67,24 +67,6 @@
     self.item.valueInDollars = [self.valueField.text intValue];
 }
 
-#pragma mark - Actions
-
-- (IBAction)takePicture:(id)sender {
-    UIImagePickerController *imagePicker = [UIImagePickerController new];
-    
-    // If the device has a camera, take a picture, otherwise,
-    // just pick from photo library
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    } else {
-        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    imagePicker.delegate = self;
-    
-    // Place image picker on the screen
-    [self presentViewController:imagePicker animated:YES completion:nil];
-}
-
 #pragma mark - Image Picker Controller Delegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -107,6 +89,24 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+#pragma mark - Actions
+
+- (IBAction)takePicture:(id)sender {
+    UIImagePickerController *imagePicker = [UIImagePickerController new];
+    
+    // If the device has a camera, take a picture, otherwise,
+    // just pick from photo library
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    imagePicker.delegate = self;
+    
+    // Place image picker on the screen
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (IBAction)backgroundTapped:(id)sender {
