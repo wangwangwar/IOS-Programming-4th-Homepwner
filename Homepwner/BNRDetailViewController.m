@@ -66,6 +66,13 @@
     
     [self.view addConstraints:horizontalConstraints];
     [self.view addConstraints:verticalConstraints];
+    
+    // Set the vertical priorities to be less than
+    // those of the other subviews
+    [self.imageView setContentHuggingPriority:200
+                                      forAxis:UILayoutConstraintAxisVertical];
+    [self.imageView setContentCompressionResistancePriority:200
+                                                    forAxis:UILayoutConstraintAxisVertical];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
