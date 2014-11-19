@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 @end
 
@@ -78,6 +79,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    // Call `prepareViewForOrientation:` before view appear
+    UIInterfaceOrientation io = [[UIApplication sharedApplication] statusBarOrientation];
+    [self prepareViewsForOrientation:io];
+    
     self.nameField.text = self.item.itemName;
     self.SerialNumberField.text = self.item.serialName;
     self.valueField.text = [NSString stringWithFormat:@"%d", self.item.valueInDollars];
@@ -108,6 +113,26 @@
     self.item.itemName = self.nameField.text;
     self.item.serialName = self.SerialNumberField.text;
     self.item.valueInDollars = [self.valueField.text intValue];
+}
+
+- (void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation {
+    // Is it an iPad? No preparation necessary
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        return;
+    }
+    
+    // Is it landscape?
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        self.imageView.hidden = YES;
+        self.cameraButton.enabled = NO;
+    } else {
+        self.imageView.hidden = NO;
+        self.cameraButton.enabled = YES;
+    }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self prepareViewsForOrientation:toInterfaceOrientation];
 }
 
 #pragma mark - Image Picker Controller Delegate
