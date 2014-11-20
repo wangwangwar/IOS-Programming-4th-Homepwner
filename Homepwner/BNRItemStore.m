@@ -62,6 +62,22 @@
     [self.privateItems insertObject:item atIndex:toIndex];
 }
 
+#pragma mark - Archiver and Unarchiver
+
+- (NSString *)itemArchivePath {
+    NSArray *documentDirectories =
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories firstObject];
+    
+    return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+}
+
+- (BOOL)saveChanges {
+    NSString *path = [self itemArchivePath];
+    // Return YES on success
+    return [NSKeyedArchiver archiveRootObject:self.privateItems toFile:path];
+}
+
 #pragma mark - Class Method
 
 + (instancetype)sharedStore {
