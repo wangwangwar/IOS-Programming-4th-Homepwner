@@ -75,4 +75,26 @@
     return item;
 }
 
+#pragma mark - NSCoding Protocol
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.itemName forKey:@"itemName"];
+    [aCoder encodeObject:self.serialName forKey:@"serialName"];
+    [aCoder encodeObject:self.dateCreated forKey:@"dateCreated"];
+    [aCoder encodeObject:self.itemKey forKey:@"itemKey"];
+    [aCoder encodeInt:self.valueInDollars forKey:@"valueInDollars"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        _itemName = [aDecoder decodeObjectForKey:@"itemName"];
+        _serialName = [aDecoder decodeObjectForKey:@"serialName"];
+        _dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
+        _itemKey = [aDecoder decodeObjectForKey:@"itemKey"];
+        _valueInDollars = [aDecoder decodeIntForKey:@"valueInDollars"];
+    }
+    return self;
+}
+
 @end
