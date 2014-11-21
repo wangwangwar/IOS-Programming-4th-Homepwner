@@ -40,6 +40,13 @@
     
     if (self) {
         _dictionary = [NSMutableDictionary new];
+        
+        // If received low memory warning, clear the `_dictionary`
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self
+               selector:@selector(clearCache:)
+                   name:UIApplicationDidReceiveMemoryWarningNotification
+                 object:nil];
     }
     
     return self;
@@ -100,4 +107,10 @@
     return [documentDirectory stringByAppendingPathComponent:key];
 }
 
+#pragma mark - Low memory notification
+
+- (void)clearCache:(NSNotification *)note {
+    NSLog(@"flushing %lu images out of the cache", (unsigned long)[self.dictionary count]);
+    [self.dictionary removeAllObjects];
+}
 @end
