@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61285D481A20F7E800ECE8E0 /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61285D471A20F7E800ECE8E0 /* BNRImageViewController.m */; };
 		6135469119FC9C1F00583593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6135469019FC9C1F00583593 /* main.m */; };
 		6135469419FC9C1F00583593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6135469319FC9C1F00583593 /* AppDelegate.m */; };
 		6135469719FC9C1F00583593 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6135469619FC9C1F00583593 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61285D461A20F7E800ECE8E0 /* BNRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageViewController.h; sourceTree = "<group>"; };
+		61285D471A20F7E800ECE8E0 /* BNRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageViewController.m; sourceTree = "<group>"; };
 		6135468B19FC9C1F00583593 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6135468F19FC9C1F00583593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6135469019FC9C1F00583593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				6135469619FC9C1F00583593 /* ViewController.m */,
 				61A3C7A419FE21AD00D61DC1 /* BNRItemViewController.h */,
 				61A3C7A519FE21AD00D61DC1 /* BNRItemViewController.m */,
+				61285D461A20F7E800ECE8E0 /* BNRImageViewController.h */,
+				61285D471A20F7E800ECE8E0 /* BNRImageViewController.m */,
 				6135469819FC9C1F00583593 /* Main.storyboard */,
 				6135469B19FC9C1F00583593 /* Images.xcassets */,
 				6135469D19FC9C1F00583593 /* LaunchScreen.xib */,
@@ -266,6 +271,7 @@
 				61A3C7A619FE21AD00D61DC1 /* BNRItemViewController.m in Sources */,
 				6135469119FC9C1F00583593 /* main.m in Sources */,
 				61A3C7AC19FE421900D61DC1 /* BNRItemStore.m in Sources */,
+				61285D481A20F7E800ECE8E0 /* BNRImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

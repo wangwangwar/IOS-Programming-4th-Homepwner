@@ -11,8 +11,12 @@
 #import "BNRItem.h"
 #import "BNRDetailViewController.h"
 #import "BNRItemCell.h"
+#import "BNRImageStore.h"
+#import "BNRImageViewController.h"
 
-@interface BNRItemViewController()
+@interface BNRItemViewController() <UIPopoverControllerDelegate>
+
+@property (nonatomic, strong) UIPopoverController *imagePopover;
 
 @end
 
@@ -73,7 +77,36 @@
     cell.nameLabel.text = item.itemName;
     cell.serialNumberLabel.text = item.serialName;
     cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
-    cell.imageView.image = item.thumbnail;
+    cell.thumbnailView.image = item.thumbnail;
+    cell.actionBlock = ^{
+        NSLog(@"Going to show image for %@", item);
+        
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+            // If there is no image, we don't need to display anything
+            UIImage *img = [[BNRImageStore sharedStore] imageForKey:item.itemKey];
+            if (!img) {
+                return;
+            }
+            
+            // Make a rectangle for the frame of the thumbnail relative to
+            // our table view
+            CGRect rect = [self.view convertRect:cell.thumbnailView.bounds
+                                        fromView:cell.thumbnailView];
+            
+            // Create a new BNRImageViewController and set its image
+            BNRImageViewController *ivc = [BNRImageViewController new];
+            ivc.image = img;
+            
+            // Present a 600 * 600 popover from the rect
+            self.imagePopover = [[UIPopoverController alloc] initWithContentViewController:ivc];
+            self.imagePopover.delegate = self;
+            self.imagePopover.popoverContentSize = CGSizeMake(600.0, 600.0);
+            [self.imagePopover presentPopoverFromRect:rect
+                                               inView:self.view
+                             permittedArrowDirections:UIPopoverArrowDirectionAny
+                                             animated:YES];
+        }
+    };
     
     return cell;
 }
@@ -103,6 +136,12 @@
     detailViewController.item = item;
     
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+#pragma mark - Popover controller delegate
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    self.imagePopover = nil;
 }
 
 #pragma mark - Actions

@@ -39,17 +39,30 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7r-C7-4Ia">
-                        <rect key="frame" x="258.5" y="11" width="41.5" height="20.5"/>
+                        <rect key="frame" x="258" y="11" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-Bh-cXf">
+                        <rect key="frame" x="10" y="2" width="40" height="40"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="showImage:" destination="rf0-df-te5" eventType="touchUpInside" id="hZJ-Hf-lLd"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="po4-f6-Brr" firstAttribute="top" secondItem="2L8-Bh-cXf" secondAttribute="top" id="A7r-JD-t1U"/>
                     <constraint firstItem="0xd-mv-VbY" firstAttribute="leading" secondItem="po4-f6-Brr" secondAttribute="trailing" constant="8" id="A7s-mZ-XzX"/>
+                    <constraint firstItem="po4-f6-Brr" firstAttribute="bottom" secondItem="2L8-Bh-cXf" secondAttribute="bottom" id="BGS-jN-EMM"/>
                     <constraint firstItem="0xd-mv-VbY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="e5d-hY-N5N" secondAttribute="bottom" constant="5" id="Cms-sT-jRl"/>
                     <constraint firstItem="v7r-C7-4Ia" firstAttribute="leading" secondItem="0xd-mv-VbY" secondAttribute="trailing" constant="8" id="GOG-eZ-bMu"/>
                     <constraint firstItem="e5d-hY-N5N" firstAttribute="leading" secondItem="po4-f6-Brr" secondAttribute="trailing" constant="8" id="JK3-ij-J83"/>
+                    <constraint firstItem="po4-f6-Brr" firstAttribute="leading" secondItem="2L8-Bh-cXf" secondAttribute="leading" id="NmR-wj-CZ6"/>
+                    <constraint firstItem="po4-f6-Brr" firstAttribute="trailing" secondItem="2L8-Bh-cXf" secondAttribute="trailing" id="T6k-6L-w59"/>
                     <constraint firstAttribute="trailingMargin" secondItem="v7r-C7-4Ia" secondAttribute="trailing" constant="12" id="Xos-oT-cyZ"/>
                     <constraint firstItem="v7r-C7-4Ia" firstAttribute="leading" secondItem="e5d-hY-N5N" secondAttribute="trailing" constant="8" id="Yj3-Os-nmJ"/>
                     <constraint firstAttribute="centerY" secondItem="v7r-C7-4Ia" secondAttribute="centerY" id="aPo-0z-sVl"/>
