@@ -45,7 +45,9 @@
 }
 
 - (BNRItem *)createItem {
-    BNRItem *item = [BNRItem new];
+    BNRItem *item = [[BNRItem alloc] initWithItemName:nil
+                                       valueInDollars:0
+                                         serialNumber:nil];
     [self.privateItems addObject:item];
     return item;
 }
