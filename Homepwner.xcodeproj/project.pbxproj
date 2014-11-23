@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		61285D481A20F7E800ECE8E0 /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61285D471A20F7E800ECE8E0 /* BNRImageViewController.m */; };
+		61285D4B1A221B8000ECE8E0 /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61285D491A221B8000ECE8E0 /* Homepwner.xcdatamodeld */; };
+		61285D4E1A221CAC00ECE8E0 /* BNRImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 61285D4D1A221CAC00ECE8E0 /* BNRImageTransformer.m */; };
 		6135469119FC9C1F00583593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6135469019FC9C1F00583593 /* main.m */; };
 		6135469419FC9C1F00583593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6135469319FC9C1F00583593 /* AppDelegate.m */; };
 		6135469719FC9C1F00583593 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6135469619FC9C1F00583593 /* ViewController.m */; };
@@ -38,6 +40,9 @@
 /* Begin PBXFileReference section */
 		61285D461A20F7E800ECE8E0 /* BNRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageViewController.h; sourceTree = "<group>"; };
 		61285D471A20F7E800ECE8E0 /* BNRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageViewController.m; sourceTree = "<group>"; };
+		61285D4A1A221B8000ECE8E0 /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
+		61285D4C1A221CAC00ECE8E0 /* BNRImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageTransformer.h; sourceTree = "<group>"; };
+		61285D4D1A221CAC00ECE8E0 /* BNRImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageTransformer.m; sourceTree = "<group>"; };
 		6135468B19FC9C1F00583593 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6135468F19FC9C1F00583593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6135469019FC9C1F00583593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +131,9 @@
 				61A3C7A519FE21AD00D61DC1 /* BNRItemViewController.m */,
 				61285D461A20F7E800ECE8E0 /* BNRImageViewController.h */,
 				61285D471A20F7E800ECE8E0 /* BNRImageViewController.m */,
+				61285D491A221B8000ECE8E0 /* Homepwner.xcdatamodeld */,
+				61285D4C1A221CAC00ECE8E0 /* BNRImageTransformer.h */,
+				61285D4D1A221CAC00ECE8E0 /* BNRImageTransformer.m */,
 				6135469819FC9C1F00583593 /* Main.storyboard */,
 				6135469B19FC9C1F00583593 /* Images.xcassets */,
 				6135469D19FC9C1F00583593 /* LaunchScreen.xib */,
@@ -266,7 +274,9 @@
 				6171541F1A202DCE007EFD27 /* BNRItemCell.m in Sources */,
 				6135469419FC9C1F00583593 /* AppDelegate.m in Sources */,
 				61A3C7A919FE24F200D61DC1 /* BNRItem.m in Sources */,
+				61285D4E1A221CAC00ECE8E0 /* BNRImageTransformer.m in Sources */,
 				61D3112B1A0B4B8D00EB8CFD /* BNRDetailViewController.m in Sources */,
+				61285D4B1A221B8000ECE8E0 /* Homepwner.xcdatamodeld in Sources */,
 				6135EF991A0DD1BB006EB7A6 /* BNRImageStore.m in Sources */,
 				61A3C7A619FE21AD00D61DC1 /* BNRItemViewController.m in Sources */,
 				6135469119FC9C1F00583593 /* main.m in Sources */,
@@ -476,6 +486,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		61285D491A221B8000ECE8E0 /* Homepwner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				61285D4A1A221B8000ECE8E0 /* Homepwner.xcdatamodel */,
+			);
+			currentVersion = 61285D4A1A221B8000ECE8E0 /* Homepwner.xcdatamodel */;
+			path = Homepwner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6135468319FC9C1F00583593 /* Project object */;
 }
