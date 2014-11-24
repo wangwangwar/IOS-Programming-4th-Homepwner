@@ -75,7 +75,7 @@
     BNRItem *item = items[indexPath.row];
     
     cell.nameLabel.text = item.itemName;
-    cell.serialNumberLabel.text = item.serialName;
+    cell.serialNumberLabel.text = item.serialNumber;
     cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
     cell.thumbnailView.image = item.thumbnail;
     

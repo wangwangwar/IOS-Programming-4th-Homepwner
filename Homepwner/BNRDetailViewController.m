@@ -114,7 +114,7 @@
     [self prepareViewsForOrientation:io];
     
     self.nameField.text = self.item.itemName;
-    self.SerialNumberField.text = self.item.serialName;
+    self.SerialNumberField.text = self.item.serialNumber;
     self.valueField.text = [NSString stringWithFormat:@"%d", self.item.valueInDollars];
     
     // make NSDateFormatter `static` for time-saving
@@ -141,7 +141,7 @@
     
     // Save changes to item
     self.item.itemName = self.nameField.text;
-    self.item.serialName = self.SerialNumberField.text;
+    self.item.serialNumber = self.SerialNumberField.text;
     self.item.valueInDollars = [self.valueField.text intValue];
 }
 
