@@ -10,6 +10,7 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
+#import "BNRAssetTypeViewController.h"
 
 @interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
 
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *assetTypeButton;
 
 @end
 
@@ -131,6 +133,14 @@
     UIImage *image = [[BNRImageStore sharedStore] imageForKey:self.item.itemKey];
     // Put the image on the screen
     self.imageView.image = image;
+    
+    // Set asset type button
+    NSString *assetTypeLabel = [self.item.assetType valueForKey:@"label"];
+    if (!assetTypeLabel) {
+        assetTypeLabel = @"None";
+    } else {
+        self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", assetTypeLabel];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -259,4 +269,14 @@
     [self.presentingViewController dismissViewControllerAnimated:YES
                                                       completion:self.dismissBlock];
 }
+
+- (IBAction)showAssetTypePicker:(id)sender {
+    [self.view endEditing:YES];
+    
+    BNRAssetTypeViewController *avc = [[BNRAssetTypeViewController alloc] init];
+    avc.item = self.item;
+    
+    [self.navigationController pushViewController:avc animated:YES];
+}
+
 @end

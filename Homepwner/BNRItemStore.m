@@ -100,7 +100,7 @@
     } else {
         order = [[self.allItems lastObject] orderingValue] + 1.0;
     }
-    NSLog(@"Adding after %d items, order = %.2f", [self.privateItems count], order);
+    NSLog(@"Adding after %lu items, order = %.2f", (unsigned long)[self.privateItems count], order);
     
     BNRItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"BNRItem"
                                                   inManagedObjectContext:self.context];
@@ -150,8 +150,6 @@
     item.orderingValue = newOrderingValue;
 }
 
-#pragma mark - Core data
-
 - (NSString *)itemArchivePath {
     NSArray *documentDirectories =
     NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -167,6 +165,48 @@
         NSLog(@"Error saving: %@", [error localizedDescription]);
     }
     return successful;
+}
+
+#pragma mark - Asset types
+
+- (NSArray *)allAssetTypes {
+    if (!_allAssetTypes) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *e = [NSEntityDescription entityForName:@"BNRAssetType"
+                                             inManagedObjectContext:self.context];
+        request.entity = e;
+        
+        NSError *error;
+        NSArray *result = [self.context executeFetchRequest:request
+                                                      error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch Failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+        _allAssetTypes = [result mutableCopy];
+    }
+    
+    // Is this the first time the program is being run?
+    if ([_allAssetTypes count] == 0) {
+        NSManagedObject *type;
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"BNRAssetType"
+                                             inManagedObjectContext:self.context];
+        [type setValue:@"Furniture" forKey:@"label"];
+        [_allAssetTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"BNRAssetType"
+                                             inManagedObjectContext:self.context];
+        [type setValue:@"Jewelry" forKey:@"label"];
+        [_allAssetTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"BNRAssetType"
+                                             inManagedObjectContext:self.context];
+        [type setValue:@"Electronics" forKey:@"label"];
+        [_allAssetTypes addObject:type];
+    }
+    
+    return _allAssetTypes;
 }
 
 #pragma mark - Class Method
